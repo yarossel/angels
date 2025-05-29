@@ -4,9 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Angels Of Delusion</title>
-  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/styles/global.css">
 </head>
 <body>
+  <div class="scroll-container">
+    <section class="hero-section">
+      <nav>
+        <ul>
+          <li><button data-text="Home">Home</button></li>
+          <li><button data-text="Who are we"><a href="#characters">Who are we</a></button></li>
+          <li><button data-text="Clips">Clips</button></li>
+          <li><button data-text="Tickets">Tickets</button></li>
+          <li><button data-text="Social">Social</button></li>
+        </ul>
+      </nav>
+      <img class="img stream" src="src/components/image_2025-05-29_20-20-51.png" alt="Stream us on YouTube">
+      <img class="img card" src="src/components/image_2025-05-29_20-21-35.png" alt="Angels of Delusion">
+      <div class="carousel" data-carousel>
+        <button class="carousel-btn prev" data-carousel-btn="prev"><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.7458 26.25C19.0556 26.2508 18.3861 26.0139 17.85 25.5792L10.4125 19.4396C10.1208 19.2074 9.8853 18.9124 9.72341 18.5766C9.56152 18.2408 9.47745 17.8728 9.47745 17.5C9.47745 17.1272 9.56152 16.7592 9.72341 16.4234C9.8853 16.0876 10.1208 15.7926 10.4125 15.5604L17.85 9.42083C18.2978 9.06207 18.8373 8.83631 19.4071 8.76927C19.9769 8.70223 20.5541 8.79661 21.0729 9.04166C21.5238 9.2404 21.9079 9.56473 22.1795 9.9759C22.451 10.3871 22.5984 10.8677 22.6042 11.3604V23.6396C22.5984 24.1323 22.451 24.6129 22.1795 25.0241C21.9079 25.4353 21.5238 25.7596 21.0729 25.9583C20.6565 26.1492 20.2039 26.2486 19.7458 26.25ZM12.6583 17.5L19.6875 23.3333V11.7979L12.6583 17.5Z" fill="white"/>
+        </svg>
+        </button>
+        <button class="carousel-btn next" data-carousel-btn="next"><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15.2542 8.75001C15.9444 8.74918 16.6139 8.98607 17.15 9.42084L24.5875 15.5604C24.8792 15.7926 25.1147 16.0876 25.2766 16.4234C25.4385 16.7592 25.5226 17.1272 25.5226 17.5C25.5226 17.8728 25.4385 18.2408 25.2766 18.5766C25.1147 18.9124 24.8792 19.2074 24.5875 19.4396L17.15 25.5792C16.7023 25.9379 16.1627 26.1637 15.5929 26.2307C15.0231 26.2978 14.4459 26.2034 13.9271 25.9583C13.4762 25.7596 13.0921 25.4353 12.8206 25.0241C12.549 24.6129 12.4016 24.1323 12.3959 23.6396L12.3959 11.3604C12.4016 10.8677 12.549 10.3871 12.8206 9.97591C13.0921 9.56474 13.4762 9.24041 13.9271 9.04167C14.3436 8.85082 14.7961 8.75137 15.2542 8.75001ZM22.3417 17.5L15.3125 11.6667L15.3125 23.2021L22.3417 17.5Z" fill="white"/>
+        </svg>
+        </button>
+        <div class="dots" data-dots>
+          <div class="dot one"></div>
+          <div class="dot two"></div>
+          <div class="dot three"></div>
+        </div>
+        <ul data-slides>
+          <li class="slide" data-active>
+            <img src="src/components/GRUw6qMWAAAkqKV.jpeg" alt="first">
+          </li>
+          <li class="slide">
+            <img src="src/components/zzz-virtual-idols.jpg" alt="second">
+          </li>
+          <li class="slide">
+            <img src="src/components/GrKbkuOXkAAOBNM.jpg_large.jpg" alt="third">
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="characters-section" id="characters">
+      <div class="left-side"></div>
+      <div class="center"></div>
+      <div class="right-side"></div>
+    </section>
+  </div>
     <script type="module" src="src/main.js"></script>
 </body>
 </html>

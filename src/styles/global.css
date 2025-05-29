@@ -1,0 +1,60 @@
+@import url('main.css');
+@import url('characters.css');
+
+@font-face {
+  font-family: ZZZ;
+  src: url('../fonts/en-us.ttf');
+}
+
+:root {
+  --gray: #313131;
+  --pink: #E5B8BE;
+  --green: #97E5CC;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: ZZZ;
+  overflow-x: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  all: unset;
+}
+
+
+
+
+

@@ -1,0 +1,6 @@
+.left-side {
+    -webkit-mask-image: url('../components/left-side.svg');
+    mask-image: url('../components/left-side.svg');
+    mask-size: cover;
+    background: white;
+}
