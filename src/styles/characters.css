@@ -4,6 +4,32 @@
     height: 100vh;
 }
 
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.carousel .slide > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+}
+
+.carousel .slide[data-active] {
+  opacity: 1;
+}
+
 .svg-back {
     position: absolute;
     width: 100%;
@@ -18,17 +44,28 @@
     width: 100%;
     height: 100%;
     padding: 1rem;
+    margin-left: 1rem;
     color: white;
-    z-index: 3;
+    z-index: 10;
     pointer-events: none;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     user-select: none;
+    opacity: 0;
+}
+
+.slide[data-active] .character-info {
+    opacity: 1;
+}
+
+.slide[data-active] .character-info .name,
+.slide[data-active] .character-info .role,
+.slide[data-active] .character-info .description {
+    animation: slideIn .7s ease forwards;
 }
 
 .slide .character-info pre {
-    display: block;
     margin: 0;
     font-family: ZZZ;
 }
@@ -53,8 +90,13 @@
     position: absolute;
     right: 4%;
     bottom: 22%;
-    transform: translate(0, 0);
     font-size: 5.3125rem;
+    transform: translateX(50rem);
+    opacity: 0;
+}
+
+.slide[data-active] .character-info .idol-name {
+    animation: slideOut .7s ease forwards;
 }
 
 .characters-nav-container {
@@ -64,7 +106,7 @@
     align-items: center;
     width: 100%;
     height: 14%;
-    background-color: var(--dark-gray);
+    background-image: repeating-linear-gradient(-45deg, var(--dark-gray) 0, var(--dark-gray) 0.3rem, var(--light-black) 0.3rem, var(--light-black) 0.6rem);
     z-index: 1;
     user-select: none;
 }
@@ -79,6 +121,7 @@
     align-items: center;
     justify-content: center;
     gap: 4%;
+    border: 2px solid var(--gray);
 }
 
 .characters-nav button {
@@ -127,8 +170,13 @@
     border-radius: 10px;
 }
 
-.character-mask {
+.active-border {
     position: relative;
+    position: absolute;
+    width: 7%;
+    height: 55%;
+    pointer-events: none;
+    transition: left .3s ease;
 }
 
 @property --angle {
@@ -137,16 +185,15 @@
     inherits: false;
 }
 
-.character-mask::after, .character-mask::before {
+.active-border::after, .active-border::before {
     content: '';
     position: absolute;
     top: -28%;
-    left: -12%;
+    left: -12.5%;
     width: 125%;
     height: 156.7%;
     padding: 8px;
     background: conic-gradient(from var(--angle), var(--pink), var(--green), var(--pink));
-    background-size: 100%;
     border-radius: 10px;
     animation: 3s spin linear infinite;
     -webkit-mask: 
@@ -155,10 +202,6 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
-    opacity: 0;
-}
-
-.character-mask[data-active]::after {
     opacity: 1;
 }
 
@@ -169,4 +212,14 @@
     to {
         --angle: 360deg;
     }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-50rem); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+    from { transform: translateX(50rem); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
 }

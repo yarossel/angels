@@ -1,5 +1,3 @@
-
-
 nav {
     position: absolute;
     width: 100%;
@@ -13,19 +11,19 @@ nav > ul {
     gap: 3.8rem;
 }
 
-nav > ul > li > button {
+.hero-section nav > ul > li > button {
     text-transform: uppercase;
 }
 
-li > button {
+.hero-section li > button {
     position: relative;
     padding: 0.3em;
     border: none;
     background-color: var(--gray);
     color: white;
-    font-family: ZZZ;
+    font-family: ZZZ-jp;
     font-size: 2rem;
-    width: 17rem;
+    width: 17.5rem;
     height: 4rem;
     cursor: pointer;
     border-radius: 10px;
@@ -35,7 +33,7 @@ li > button {
     user-select: none;
 }
 
-li > button::before {
+.hero-section li > button::before {
     content: attr(data-text);
     position: absolute;
     left: 0;
@@ -55,13 +53,13 @@ li > button::before {
     z-index: -1;
 }
 
-li > button:hover {
+.hero-section li > button:hover {
     color: transparent;
     background-color: var(--gray);
     transform: scale(1.15);
 }
 
-li > button:active {
+.hero-section li > button:active {
     transform: scale(0.9);
 }
 

@@ -1,15 +1,22 @@
 @import url('main.css');
 @import url('characters.css');
+@import url('tickets.css');
 
 @font-face {
   font-family: ZZZ;
   src: url('../fonts/en-us.ttf');
 }
 
+@font-face {
+  font-family: ZZZ-jp;
+  src: url('../fonts/ja-jp.ttf');
+}
+
 :root {
   --gray: #313131;
   --dark-gray: #202020;
   --black: #0D0D0D;
+  --light-black: #161616;
   --pink: #E5B8BE;
   --green: #97E5CC;
 }
@@ -20,6 +27,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -32,6 +40,10 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+p {
+  margin: 0;
 }
 
 ::-webkit-scrollbar {

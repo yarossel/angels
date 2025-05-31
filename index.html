@@ -11,25 +11,19 @@
     <section class="hero-section">
       <nav>
         <ul>
-          <li><button data-text="Home">Home</button></li>
+          <li><button data-text="Log In">Log In</button></li>
           <li><button data-text="Who are we"><a href="#characters">Who are we</a></button></li>
           <li><button data-text="Clips">Clips</button></li>
-          <li><button data-text="Tickets">Tickets</button></li>
+          <li><button data-text="Tickets"><a href="#tickets">Tickets</a></button></li>
           <li><button data-text="Social">Social</button></li>
         </ul>
       </nav>
       <img class="img stream" src="src/components/image_2025-05-29_20-20-51.png" alt="Stream us on YouTube">
       <img class="img card" src="src/components/image_2025-05-29_20-21-35.png" alt="Angels of Delusion">
-      <div class="carousel" data-carousel>
-        <ul data-slides>
-          <li class="slide" data-active>
-            <img src="src/components/GRUw6qMWAAAkqKV.jpeg" alt="first">
-          </li>
-        </ul>
-      </div>
+      <img class="background" src="src/components/GRUw6qMWAAAkqKV.jpeg" alt="first">
     </section>
     <section class="characters-section" id="characters">
-      <div class="carousel" data-carousel>
+      <div class="content carousel" data-carousel>
         <ul data-slides>
           <li class="slide" data-active>
             <div class="character-info">
@@ -54,28 +48,66 @@ Ramiel</pre>
             <img src="src/components/p628k0wdvgtd1.jpeg" alt="first">
           </li>
           <li class="slide">
-            <img src="src/components/zzz-virtual-idols.jpg" alt="second">
+            <img src="src/components/Без названия20_20250601004008.png" alt="second">
+            <div class="character-info">
+              <h3 class="name">Tougou Rin</h3>
+              <pre class="role">A bright top idol whose real form is
+an introverted, shy, and
+timid robot</pre>
+              <pre class="description">Even in her robot state, she practice
+energetic idol poses (smile and
+posture) in front of a mirror
+when she is alone</pre>
+              <pre class="description">Likes albums by the famous
+female singer MAO</pre>
+              <pre class="description">Dislikes her combat
+mission as a
+combat robot</pre>
+                <div class="idol-name">
+                  <pre class="idol-name">   Yutane
+Johiel</pre>
+                </div>
+            </div>
           </li>
           <li class="slide">
+            <div class="character-info">
+              <h3 class="name">Haruka Rokudoku</h3>
+              <pre class="role">Skilled in dance and rap, Haruka is
+actually hardworking, supporting
+her entire idol group</pre>
+              <pre class="description">Uses chili peppers to induce tears
+when she needs to cry</pre>
+              <pre class="description">Enjoys harmless jokes and
+pranks that somehow
+never offend others</pre>
+              <pre class="description">Hates being labeled a genius,
+believing that geniuses
+don't exist</pre>
+                <div class="idol-name">
+                  <pre class="idol-name">   Rokudoku
+Sariel</pre>
+                </div>
+            </div>
             <img src="src/components/Без названия17_20250530232212.png" alt="third">
           </li>
         </ul>
         <div class="characters-nav-container">
-          <div class="characters-nav">
+          <div class="characters-nav" data-slider>
             <button class="nav-btn prev" data-carousel-btn="prev">
               <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M34.559 15.4918C35.3436 15.4941 36.1186 15.6645 36.8319 15.9913C37.6042 16.3317 38.2621 16.8872 38.7272 17.5914C39.1922 18.2957 39.4448 19.1189 39.4546 19.9628V40.9939C39.4448 41.8377 39.1922 42.661 38.7272 43.3652C38.2621 44.0694 37.6042 44.6249 36.8319 44.9653C35.9434 45.385 34.9548 45.5467 33.9788 45.4318C33.0029 45.317 32.0788 44.9304 31.3119 44.3159L18.5733 33.8003C18.0738 33.4027 17.6704 32.8974 17.3931 32.3223C17.1158 31.7471 16.9718 31.1168 16.9718 30.4783C16.9718 29.8398 17.1158 29.2095 17.3931 28.6344C17.6704 28.0592 18.0738 27.554 18.5733 27.1563L31.3119 16.6407C32.2301 15.8961 33.3768 15.4904 34.559 15.4918Z" fill="black"/>
               </svg>
             </button>
-            <div class="character-mask" data-active>
-              <img src="src/components/image 5.png" alt="">
-            </div>
-            <div class="character-mask">
-              <img src="src/components/yutane.png" alt="">
-            </div>
-            <div class="character-mask">
-              <img class="ramiel" src="src/components/ramiel.png" alt="">
-            </div>
+              <div class="character-mask" data-active>
+                <img src="src/components/image 5.png" alt="">
+              </div>
+              <div class="character-mask">
+                <img src="src/components/yutane.png" alt="">
+              </div>
+              <div class="character-mask">
+                <img class="ramiel" src="src/components/ramiel.png" alt="">
+              </div>
+              <div class="active-border"></div>
             <button class="nav-btn next" data-carousel-btn="next">
               <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26.5206 45.4643C25.736 45.4619 24.9609 45.2916 24.2476 44.9647C23.4754 44.6243 22.8175 44.0688 22.3524 43.3646C21.8873 42.6604 21.6348 41.8372 21.625 40.9933V19.9622C21.6348 19.1183 21.8873 18.2951 22.3524 17.5909C22.8175 16.8866 23.4754 16.3311 24.2476 15.9907C25.1362 15.571 26.1248 15.4094 27.1008 15.5242C28.0767 15.639 29.0008 16.0257 29.7677 16.6402L42.5062 27.1557C43.0058 27.5534 43.4092 28.0586 43.6865 28.6338C43.9638 29.2089 44.1078 29.8392 44.1078 30.4777C44.1078 31.1162 43.9638 31.7465 43.6865 32.3217C43.4092 32.8968 43.0058 33.4021 42.5062 33.7998L29.7677 44.3153C28.8495 45.06 27.7028 45.4657 26.5206 45.4643Z" fill="black"/>
@@ -124,6 +156,47 @@ Ramiel</pre>
             </defs>
           </svg>
         </div>
+      </div>
+    </section>
+    <section class="tickets-section" id="tickets">
+      <div class="border-container">
+        <ul class="tickets-container">
+          <li class="ticket">
+            <p>JUN 7, 2025 - JUN 8, 2025</p>
+            <p>Budapesht, Budapesht</p>
+            <button data-text="BUY">BUY</button>
+          </li>
+          <li class="ticket">
+            <p>JUN 15, 2025 - JUN 17, 2025</p>
+            <p>France, Paris</p>
+            <button data-text="BUY">BUY</button>
+          </li>
+          <li class="ticket">
+            <p>JUN 25, 2025</p>
+            <p>Oslo, Norway</p>
+            <button data-text="BUY">BUY</button>
+          </li>
+          <li class="ticket">
+            <p>JUL 6, 2025 - JUL 7, 2025</p>
+            <p>Moscow, Russia</p>
+            <button data-text="BUY">BUY</button>
+          </li>
+          <li class="ticket">
+            <p>JUL 14, 2025 - JUL 15, 2025</p>
+            <p>Shanghai, China</p>
+            <button data-text="BUY">BUY</button>
+          </li>
+          <li class="ticket">
+            <p>JUL 25, 2025</p>
+            <p>Tokyo, Japan</p>
+            <button data-text="BUY">BUY</button>
+          </li>
+          <li class="ticket">
+            <p>AUG 4, 2025</p>
+            <p>Seol, South Korea</p>
+            <button data-text="BUY">BUY</button>
+          </li>
+        </ul>
       </div>
     </section>
   </div>

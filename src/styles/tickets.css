@@ -1,0 +1,122 @@
+.tickets-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: repeating-linear-gradient(-45deg, var(--dark-gray) 0, var(--dark-gray) 0.2rem, var(--black) 0.2rem, var(--black) 0.4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-container {
+    position: relative;
+    width: 92%;
+    height: 85%;
+}
+
+.tickets-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.border-container::after, .border-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100.75%;
+    height: 101.75%;
+    background-image: conic-gradient(from var(--angle), var(--pink), var(--green), var(--pink));
+    animation: 6s spin linear infinite;
+    z-index: 0;
+    border-radius: 0.5rem;
+    pointer-events: none;
+}
+
+.border-container::before {
+    filter: blur(1rem);
+    opacity: 0.5;
+}
+
+.tickets-container .ticket {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 20rem;
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+.ticket p {
+    font-size: 1.5rem;
+    font-family: ZZZ-jp;
+}
+
+.ticket button {
+    position: relative;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    transform-origin: center;
+    border: none;
+    cursor: pointer;
+    width: 15.8%;
+    height: 60%;
+    font-size: 2rem;
+    font-family: ZZZ-jp;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    user-select: none;
+    border: 0.2rem solid var(--gray);
+    border-radius: 0.3rem;
+    transition: all .6s ease;
+}
+
+.ticket button::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left, var(--pink), var(--green), var(--pink));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: animate 5s linear infinite;
+    border-radius: 0.3rem;
+    z-index: -1;
+}
+
+.ticket button:hover {
+    color: transparent;
+    background-color: var(--gray);
+    transform: scale(1.15);
+    margin: -23px 0;
+}
+
+.ticket button:active {
+    transform: scale(0.9);
+}
+
