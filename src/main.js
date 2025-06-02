@@ -51,3 +51,39 @@ window.addEventListener('DOMContentLoaded', () => {
   } 
 });
 
+const authModal = document.querySelector('.auth-modal');
+const loginLink = document.querySelector('.login-link');
+const registerLink = document.querySelector('.register-link');
+const loginBtnModal = document.querySelector('.login-modal-btn');
+const closeBtnModal = document.querySelector('.close-modal-btn');
+const loginForm = authModal.querySelector('#loginForm');
+const alerts = document.querySelector('.alert');
+
+registerLink.addEventListener('click', () => {
+  authModal.classList.add('slide');
+})
+
+loginLink.addEventListener('click', () => {
+  authModal.classList.remove('slide');
+})
+
+if (loginBtnModal) loginBtnModal.addEventListener('click', () => {
+  authModal.classList.add('show');
+})
+
+function closeModal() {
+  authModal.classList.remove('show', 'slide');
+}
+
+closeBtnModal.addEventListener('click', closeModal);
+document.addEventListener('keydown', function(event) {
+  if (event.key == 'Escape') {
+    closeModal();
+  }
+});
+
+loginForm.addEventListener('submit', closeModal);
+
+
+
+

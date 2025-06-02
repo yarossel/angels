@@ -31,3 +31,213 @@
   object-position: center;
   user-select: none;
 }
+
+.auth-modal {
+    position: fixed;
+    width: 30rem;
+    height: 35rem;
+    background: repeating-linear-gradient(-45deg, var(--dark-gray) 0, var(--dark-gray) 0.2rem, var(--black) 0.2rem, var(--black) 0.4rem);
+    border-radius: 2rem;
+    inset: 0;
+    margin: auto;
+    padding: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    transition: all .4s ease;
+    overflow: hidden;
+    transform: scale(0);
+}
+
+.auth-modal.show {
+    transform: scale(1);
+}
+
+.auth-modal.slide {
+    height: 40rem;
+    width: 32rem;
+}
+
+.auth-modal .form-box {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    background-color: var(--gray);
+    border-radius: 0.5rem;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.auth-modal .form-box.login {
+    left: 0;
+    transition: left .18s ease;
+}
+
+.auth-modal.slide .form-box.register {
+    left: 2.25rem;
+    transition: left .18s ease;
+}
+
+.auth-modal.slide .form-box.login {
+    left: -33rem;
+    transition: none;
+}
+
+.auth-modal .form-box.register {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    width: calc(100% - 4.5rem);
+    height: calc(100% - 4.5rem);
+    left: 33rem;
+}
+
+.form-box::after, .form-box::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 102%;
+    height: 102%;
+    background-image: conic-gradient(from var(--angle), var(--pink), var(--green), var(--pink));
+    animation: 6s spin linear infinite;
+    z-index: -1;
+    border-radius: 0.5rem;
+    pointer-events: none;
+}
+
+.form-box::before {
+    filter: blur(1rem);
+    opacity: 0.5;
+}
+
+.form-box form {
+    height: calc(100% - 2rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-box h2 {
+    margin: 0.4rem 0 2rem 0;
+    font-size: 2rem;
+    font-family: ZZZ-jp;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    margin: 1em 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: 2px solid var(--light-gray);
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    color: var(--light-gray);
+    padding: 0.2em 0.5em;
+}
+
+.input-box input::placeholder {
+    font-family: ZZZ;
+    user-select: none;
+}
+
+.btn {
+    position: relative;
+    padding: 0.3em;
+    margin-top: auto;
+    margin-bottom: 4rem;
+    border: none;
+    background-color: var(--gray);
+    color: white;
+    font-family: ZZZ-jp;
+    font-size: 1.4rem;
+    width: 17.5rem;
+    height: 4rem;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .2s ease-in-out;
+    z-index: 1;
+    user-select: none;
+    text-transform: uppercase;
+    border: 2px solid var(--light-gray);
+    user-select: none;
+}
+
+.btn::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to left, var(--pink), var(--green), var(--pink));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: animate 5s linear infinite;
+    z-index: -1;
+}
+
+.btn:hover {
+    color: transparent;
+    background-color: var(--gray);
+    transform: scale(1.15);
+}
+
+.form-box p {
+    font-size: 1.2rem;
+    margin: 0.4rem 0;
+    color: white;
+    user-select: none;
+}
+
+.form-box p a {
+    cursor: pointer;
+}
+
+.form-box p a:hover {
+    text-decoration: underline white;
+}
+
+.auth-modal .close-modal-btn {
+    position: absolute;
+    top: 3.4rem;
+    right: 2.2rem;
+    background-color: transparent;
+    width: 4rem;
+    height: 3rem;
+    border: none;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 2rem;
+    font-family: ZZZ;
+    color: white;
+    transition: transform .2s ease;
+}
+
+.auth-modal .close-modal-btn:hover {
+    transform: scale(1.2);
+}
+
+.auth-modal .close-modal-btn:active {
+    transform: scale(0.9);
+}

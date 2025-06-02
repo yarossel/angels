@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+
+$name = $_SESSION['name'] ?? null;
+$active_form = $_SESSION['active_form'] ?? '';
+
+session_unset();
+
+if ($name !== null) $_SESSION['name'] = $name;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +24,54 @@
     <section class="hero-section">
       <nav>
         <ul>
-          <li><button data-text="Log In">Log In</button></li>
+          <li>
+            <?php if (!empty($name)): ?>
+            <button data-text="<?= strtoupper($name); ?>" class="logout-btn"><a href="logout.php"><?= strtoupper($name); ?></a></button>
+            <?php else: ?>
+            <button data-text="LogIn" class="login-modal-btn">LogIn</button>
+            <?php endif; ?>
+          </li>
           <li><button data-text="Who are we"><a href="#characters">Who are we</a></button></li>
           <li><button data-text="Clips">Clips</button></li>
           <li><button data-text="Tickets"><a href="#tickets">Tickets</a></button></li>
-          <li><button data-text="Social">Social</button></li>
+          <li><button data-text="Social"><a href="#social">Social</a></button></li>
         </ul>
       </nav>
+
+      <div class="auth-modal <?= $active_form === 'register' ? 'show slide' : ($active_form === 'login' ? 'show' : ''); ?>">
+        <button type="button" class="close-modal-btn">X</button>
+        <div class="form-box login">
+          <h2>Login</h2>
+          <form action="auth_process.php" method="POST" id="loginForm">
+            <div class="input-box">
+              <input type="email" name="email" placeholder="email" required>
+            </div>
+            <div class="input-box">
+              <input type="password" name="password" placeholder="password" required>
+            </div>
+            <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+            <button type="submit" name="login-btn" class="btn" data-text="Login">Login</button>
+          </form>
+        </div>
+
+        <div class="form-box register">
+          <h2>Register</h2>
+          <form action="auth_process.php" method="POST">
+            <div class="input-box">
+              <input type="text" name="name" placeholder="name" required>
+            </div>
+            <div class="input-box">
+              <input type="email" name="email" placeholder="email" required>
+            </div>
+            <div class="input-box">
+              <input type="password" name="password" placeholder="password" required>
+            </div>
+            <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+            <button type="submit" name="register-btn" class="btn" data-text="Register">Register</button>
+          </form>
+        </div>
+      </div>
+
       <img class="img stream" src="src/components/image_2025-05-29_20-20-51.png" alt="Stream us on YouTube">
       <img class="img card" src="src/components/image_2025-05-29_20-21-35.png" alt="Angels of Delusion">
       <img class="background" src="src/components/GRUw6qMWAAAkqKV.jpeg" alt="first">
@@ -197,6 +251,37 @@ Sariel</pre>
             <button data-text="BUY">BUY</button>
           </li>
         </ul>
+      </div>
+    </section>
+    <section class="footer-section" id="social">
+      <div class="header">
+        <div class="title"><h2>Social Media</h2></div>
+        <div class="title"><h2>Music</h2></div>
+        <div class="title"></div>
+      </div>
+      <div class="links">
+        <div class="social-media">
+          <a href="" data-text="Instagram">Instagram</a>
+          <a href="" data-text="X/Twitter">X/Twitter</a>
+          <a href="" data-text="Tiktok">Tiktok</a>
+          <a href="" data-text="Facebook">Facebook</a>
+          <a href="" data-text="YouTube">YouTube</a>
+        </div>
+        <div class="music">
+          <a href="" data-text="Spotify">Spotify</a>
+          <a href="" data-text="Apple Music">Apple Music</a>
+          <a href="" data-text="Deezer">Deezer</a>
+          <a href="" data-text="Yandex Music">Yandex Music</a>
+        </div>
+        <div class="important">
+          <a href="" data-text="Terms of Use">Terms of Use</a>
+          <a href="" data-text="Privacy Policy">Privacy Policy</a>
+          <a href="" data-text="Safe Surf">Safe Surf</a>
+          <a href="" data-text="Cookies">Cookies</a>
+        </div>
+      </div>
+      <div class="credits">
+        <p>@2025 Angels of Delusion</p>
       </div>
     </section>
   </div>

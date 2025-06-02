@@ -1,6 +1,7 @@
 @import url('main.css');
 @import url('characters.css');
 @import url('tickets.css');
+@import url('footer.css');
 
 @font-face {
   font-family: ZZZ;
@@ -14,11 +15,14 @@
 
 :root {
   --gray: #313131;
+  --light-gray: #878787;
   --dark-gray: #202020;
   --black: #0D0D0D;
   --light-black: #161616;
   --pink: #E5B8BE;
+  --error: #b36c75;
   --green: #97E5CC;
+  --successful: #4ed390;
 }
 
 *, *::after, *::before {
